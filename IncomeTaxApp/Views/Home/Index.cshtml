@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "A date with your money";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                Everyone runs behind money, why not you? This is a place where you find lot of tools to play with your money. Best tool is to find the ways to save tax.
+            </p>
+        </div>
+    </section>
+}
+<h3>Try following tools:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Save your tax</h5>
+        Indian tax system is quite complex with loads of sections and subsections. Not everyone can understand what each section/subsection means. This is the reason many people pay more tax even though there is a scope to save tax. This tool, which helps you to identify different ways to save your incometax and it doesn't bother you with all the complex section names. Instead it will ask you simple questions and gives you complete information about what are the areas you can focus at to save more tax. If you are completely not aware of how to save your incometax then this is the best tool you can rely on. @Html.ActionLink("Lets find your money", "SaveYourTax", "IncomeTax")
+    </li>
+
+    <li class="two">
+        <h5>Future life evaluator</h5>
+        Do you know how much money you require to survive after your retirement? This is a tool which will help you to visualize how your life will be after retirement with your current commitment towards your retirement. It will ask you simple questions and also helps you with simple suggestions. @Html.ActionLink("Lets play the future game", "RetirementCalculator", "Calculator")
+    </li>
+</ol>

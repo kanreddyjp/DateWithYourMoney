@@ -1,0 +1,48 @@
+﻿@model IncomeTaxApp.Models.UserInfo
+
+@{
+  ViewBag.Title = "Save your IncomeTax";
+  Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+@using (Html.BeginForm("Suggestions", "IncomeTax", FormMethod.Post, new { id = "UserDataForm" }))
+{
+  @Html.ValidationSummary()
+  <fieldset>
+    <label>Basic information</label>
+    <ol>
+      <li>
+        @Html.LabelFor(m => m.Name, "Name")
+        @Html.TextBoxFor(m => m.Name)
+      </li>
+      <li>
+        @Html.LabelFor(m => m.IsIndianResident, "Are you resident of India")
+        <label>@Html.RadioButtonFor(m => m.IsIndianResident, true)Yes</label>
+        <label>@Html.RadioButtonFor(m => m.IsIndianResident, false)No</label>
+      </li>
+      <li>
+        @Html.LabelFor(m => m.Age, "Your age in years")
+        @Html.TextBoxFor(m => m.Age, new { id = "age" })
+      </li>
+      <li>
+        @Html.LabelFor(m => m.Gender, "Gender")
+        <label>@Html.RadioButtonFor(m => m.Gender, "Male")Male</label>
+        <label>@Html.RadioButtonFor(m => m.Gender, "Female")Female</label>
+      </li>
+      <li>
+        @Html.LabelFor(m => m.TotalSalary, "Your gross annual salary")
+        @Html.TextBoxFor(m => m.TotalSalary)
+      </li>
+    </ol>
+    <br/>
+    <label>Income information</label>
+
+    <input type="submit" value="Get Suggestions" />
+  </fieldset>
+}
+
+<script type="text/javascript">
+  $('#age').keypress(function (e) {
+    return numberOnly(e);
+  });
+</script>
